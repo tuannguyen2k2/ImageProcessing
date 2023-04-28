@@ -204,7 +204,7 @@ if upload_img is not None:
                 caption=f"Độ sáng: {brightness_factor}%",
             )
             if mcol.button(
-                "↩️ Reset Brightness",
+                "↩️ Reset độ sáng",
                 on_click=_reset,
                 use_container_width=True,
                 kwargs={"key": "brightness_slider"},
