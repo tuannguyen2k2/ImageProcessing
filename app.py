@@ -7,7 +7,7 @@ from streamlit_cropper import st_cropper
 VERSION = "0.6.1"
 
 st.set_page_config(
-    page_title="ĐỒ ÁN XỬ LÝ ẢNH",
+    page_title="XỬ LÝ ẢNH",
     page_icon="🖼️",
     layout="wide",
 )
@@ -177,7 +177,7 @@ if upload_img is not None:
             caption=f"Xoay {degrees} độ theo chiều kim đồng hồ",
         )
         if lcol.button(
-            "↩️ Làm mới",
+            "↩️ Reset về 0 độ",
             on_click=_reset,
             use_container_width=True,
             kwargs={"key": "rotate_slider"},
