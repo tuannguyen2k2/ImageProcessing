@@ -133,7 +133,7 @@ if upload_img is not None:
             else:
                 flag = False
                 lcol.warning(
-                    "Some operations not available for black and white images."
+                    "Một số thao tác không khả dụng đối với ảnh đen trắng."
                 )
                 thresh = np.array(image).mean()
                 fn = lambda x: 255 if x > thresh else 0
@@ -151,7 +151,7 @@ if upload_img is not None:
             use_container_width=True,
             kwargs={"key": "checkboxes"},
         ):
-            lcol.success("Image reset to original!")
+            lcol.success("Ảnh đã được reset về trạng thái ban đầu!")
 
     st.markdown("""---""")
 
@@ -164,7 +164,7 @@ if upload_img is not None:
         if "rotate_slider" not in st.session_state:
             st.session_state["rotate_slider"] = 0
         degrees = lcol.slider(
-            "Drag slider to rotate image clockwise 🔁",
+            "Kéo thanh trượt để xoay ảnh theo chiều kim đồng hồ 🔁",
             min_value=0,
             max_value=360,
             value=st.session_state["rotate_slider"],
@@ -174,22 +174,22 @@ if upload_img is not None:
         lcol.image(
             rotated_img,
             use_column_width="auto",
-            caption=f"Rotated by {degrees} degrees clockwise",
+            caption=f"Xoay {degrees} độ theo chiều kim đồng hồ",
         )
         if lcol.button(
-            "↩️ Reset Rotation",
+            "↩️ Làm mới",
             on_click=_reset,
             use_container_width=True,
             kwargs={"key": "rotate_slider"},
         ):
-            lcol.success("Rotation reset to original!")
+            lcol.success("Ảnh được reset về ban đầu!")
 
         if flag:
             # ---------- BRIGHTNESS ----------
             if "brightness_slider" not in st.session_state:
                 st.session_state["brightness_slider"] = 100
             brightness_factor = mcol.slider(
-                "Drag slider to change brightness 💡",
+                "Kéo thanh trượt để thay đổi độ sáng💡",
                 min_value=0,
                 max_value=200,
                 value=st.session_state["brightness_slider"],
@@ -201,21 +201,21 @@ if upload_img is not None:
             mcol.image(
                 brightness_img,
                 use_column_width="auto",
-                caption=f"Brightness: {brightness_factor}%",
+                caption=f"Độ sáng: {brightness_factor}%",
             )
             if mcol.button(
-                "↩️ Reset Brightness",
+                "↩️ Làm mới",
                 on_click=_reset,
                 use_container_width=True,
                 kwargs={"key": "brightness_slider"},
             ):
-                mcol.success("Brightness reset to original!")
+                mcol.success("Độ sáng được reset về ban đầu!")
 
             # ---------- SATURATION ----------
             if "saturation_slider" not in st.session_state:
                 st.session_state["saturation_slider"] = 100
             saturation_factor = rcol.slider(
-                "Drag slider to change saturation",
+                "Kéo thanh trượt để thay đổi độ bão hòa",
                 min_value=0,
                 max_value=200,
                 value=st.session_state["saturation_slider"],
@@ -229,15 +229,15 @@ if upload_img is not None:
             rcol.image(
                 saturation_img,
                 use_column_width="auto",
-                caption=f"Saturation: {saturation_factor}%",
+                caption=f"Độ bão hòa: {saturation_factor}%",
             )
             if rcol.button(
-                "↩️ Reset Saturation",
+                "↩️ Làm mới",
                 on_click=_reset,
                 use_container_width=True,
                 kwargs={"key": "saturation_slider"},
             ):
-                rcol.success("Saturation reset to original!")
+                rcol.success("Độ bão hòa được reset về ban đầu!")
 
             st.markdown("""---""")
 
@@ -248,7 +248,7 @@ if upload_img is not None:
                 if "contrast_slider" not in st.session_state:
                     st.session_state["contrast_slider"] = 100
                 contrast_factor = lcol.slider(
-                    "Drag slider to change contrast",
+                    "Kéo thanh trượt để thay đổi độ tương phản",
                     min_value=0,
                     max_value=200,
                     value=st.session_state["contrast_slider"],
@@ -262,21 +262,21 @@ if upload_img is not None:
                 lcol.image(
                     contrast_img,
                     use_column_width="auto",
-                    caption=f"Contrast: {contrast_factor}%",
+                    caption=f"Độ tương phản: {contrast_factor}%",
                 )
                 if lcol.button(
-                    "↩️ Reset Contrast",
+                    "↩️ Làm mới",
                     on_click=_reset,
                     use_container_width=True,
                     kwargs={"key": "contrast_slider"},
                 ):
-                    lcol.success("Contrast reset to original!")
+                    lcol.success("Độ tương phản được reset về ban đầu!")
 
                 # ---------- SHARPNESS ----------
                 if "sharpness_slider" not in st.session_state:
                     st.session_state["sharpness_slider"] = 100
                 sharpness_factor = mcol.slider(
-                    "Drag slider to change sharpness",
+                    "Kéo thanh trượt để thay đổi độ sắc nét",
                     min_value=0,
                     max_value=200,
                     value=st.session_state["sharpness_slider"],
@@ -293,12 +293,12 @@ if upload_img is not None:
                     caption=f"Sharpness: {sharpness_factor}%",
                 )
                 if mcol.button(
-                    "↩️ Reset Sharpness",
+                    "↩️ Làm mới",
                     on_click=_reset,
                     use_container_width=True,
                     kwargs={"key": "sharpness_slider"},
                 ):
-                    mcol.success("Sharpness reset to original!")
+                    mcol.success("Độ sắc nét được reset về ban đầu!")
 
     st.markdown("""---""")
 
@@ -308,7 +308,7 @@ if upload_img is not None:
     lcol.image(
         img_arr,
         use_column_width="auto",
-        caption=f"Original Image ({pil_img.size[0]} x {pil_img.size[1]})",
+        caption=f"Ảnh ban đầu ({pil_img.size[0]} x {pil_img.size[1]})",
     )
 
     try:
@@ -319,9 +319,9 @@ if upload_img is not None:
     rcol.image(
         final_image,
         use_column_width="auto",
-        caption=f"Final Image ({final_image.shape[1]} x {final_image.shape[0]})"
+        caption=f"Ảnh sau xử lý ({final_image.shape[1]} x {final_image.shape[0]})"
         if flag
-        else f"Final Image ({final_image.size[1]} x {final_image.size[0]})",
+        else f"Ảnh sau xử lý ({final_image.size[1]} x {final_image.size[0]})",
     )
 
     if flag:
@@ -331,18 +331,18 @@ if upload_img is not None:
 
     col1, col2, col3 = st.columns(3)
     if col1.button(
-        "↩️ Reset All", on_click=_reset, use_container_width=True, kwargs={"key": "all"}
+        "↩️ Làm mới tất cả", on_click=_reset, use_container_width=True, kwargs={"key": "all"}
     ):
-        st.success(body="Image reset to original!", icon="↩️")
+        st.success(body="Ảnh đã trở về trạng thái ban đầu!", icon="↩️")
     if col2.button(
-        "🔀 Surprise Me!",
+        "🔀 Tạo ngẫu nhiên!",
         on_click=_randomize,
         use_container_width=True,
     ):
-        st.success(body="Random image generated", icon="🔀")
+        st.success(body="Hình ảnh ngẫu nhiên đã được tạo", icon="🔀")
     with open("final_image.png", "rb") as file:
         col3.download_button(
-            "💾Download final image",
+            "💾Tải ảnh xuống",
             data=file,
             mime="image/png",
             use_container_width=True,
