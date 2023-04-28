@@ -232,7 +232,7 @@ if upload_img is not None:
                 caption=f"Độ bão hòa: {saturation_factor}%",
             )
             if rcol.button(
-                "↩️ Làm mới",
+                "↩️ Reset độ bão hòa",
                 on_click=_reset,
                 use_container_width=True,
                 kwargs={"key": "saturation_slider"},
@@ -265,7 +265,7 @@ if upload_img is not None:
                     caption=f"Độ tương phản: {contrast_factor}%",
                 )
                 if lcol.button(
-                    "↩️ Làm mới",
+                    "↩️ Reset độ tương phản",
                     on_click=_reset,
                     use_container_width=True,
                     kwargs={"key": "contrast_slider"},
@@ -293,7 +293,7 @@ if upload_img is not None:
                     caption=f"Sharpness: {sharpness_factor}%",
                 )
                 if mcol.button(
-                    "↩️ Làm mới",
+                    "↩️ Reset độ sắc nét",
                     on_click=_reset,
                     use_container_width=True,
                     kwargs={"key": "sharpness_slider"},
