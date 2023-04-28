@@ -53,8 +53,8 @@ def _randomize() -> None:
 
 # ---------- OPERATIONS ----------
 option = st.radio(
-    label="Upload an image",
-    options=("Upload an image ⬆️"),
+    label="Upload an image, or take a photo with my camera",
+    options=("Upload an image ⬆️","Take a photo with my camera"),
     help="Uploaded images are deleted from the server when you\n* upload another image\n* clear the file uploader\n* close the browser tab",
 )
 
