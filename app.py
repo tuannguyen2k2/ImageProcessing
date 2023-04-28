@@ -204,12 +204,12 @@ if upload_img is not None:
                 caption=f"Độ sáng: {brightness_factor}%",
             )
             if mcol.button(
-                "↩️ Reset Brightness",
+                "↩️ Làm mới",
                 on_click=_reset,
                 use_container_width=True,
                 kwargs={"key": "brightness_slider"},
             ):
-                mcol.success("Brightness reset to original!")
+                mcol.success("Độ sáng được reset về ban đầu!")
 
             # ---------- SATURATION ----------
             if "saturation_slider" not in st.session_state:
