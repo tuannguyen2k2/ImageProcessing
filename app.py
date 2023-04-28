@@ -53,18 +53,17 @@ def _randomize() -> None:
 
 # ---------- OPERATIONS ----------
 option = st.radio(
-    label="Upload an image, or take a photo with my camera",
-    options=("Upload an image ⬆️","Take a photo with my camera"),
-    help="Uploaded images are deleted from the server when you\n* upload another image\n* clear the file uploader\n* close the browser tab",
+    label="Tải lên một ảnh hoặc chụp bằng máy ảnh của bạn",
+    options=("Tải lên một ảnh ⬆️","Chụp bằng máy ảnh của bạn"),
 )
 
-if option == "Take a photo with my camera":
+if option == "Chụp bằng máy ảnh của bạn":
     upload_img = st.camera_input(
-        label="Take a picture",
+        label="Chụp ảnh bằng camera",
     )
 else:
     upload_img = st.file_uploader(
-        label="Upload an image",
+        label="Tải lên một ảnh",
         type=["bmp", "jpg", "jpeg", "png", "svg"],
     )
 
