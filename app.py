@@ -75,22 +75,22 @@ if upload_img is not None:
 
     # ---------- PROPERTIES ----------
     st.image(img_arr, use_column_width="auto", caption="Uploaded Image")
-    st.text(f"Original width = {pil_img.size[0]}px and height = {pil_img.size[1]}px")
+    st.text(f"Chiều rộng ban đầu = {pil_img.size[0]}px và chiều cao ban đầu = {pil_img.size[1]}px")
 
-    st.caption("All changes are applied on top of the previous change.")
+    st.caption("Tất cả các thay đổi được áp dụng trên thay đổi trước đó.")
 
     # ---------- CROP ----------
-    st.text("Crop image ✂️")
+    st.text("Cắt ảnh")
     cropped_img = st_cropper(Image.fromarray(img_arr), should_resize_image=True)
     st.text(
-        f"Cropped width = {cropped_img.size[0]}px and height = {cropped_img.size[1]}px"
+        f"Ảnh đã được cắt với chiểu rộng = {cropped_img.size[0]}px và chiều cao = {cropped_img.size[1]}px"
     )
 
     with st.container():
         lcol, rcol = st.columns(2)
         if lcol.checkbox(
-            label="Use cropped Image?",
-            help="Select to use the cropped image in further operations",
+            label="Sử dụng ảnh đã được cắt",
+            help="Chọn để sử dụng hình ảnh đã cắt trong các thao tác tiếp theo",
             key="crop",
         ):
             image = cropped_img
@@ -99,16 +99,16 @@ if upload_img is not None:
 
         # ---------- REMOVE BACKGROUND ----------
         if lcol.checkbox(
-            label="Remove background?",
-            help="Select to remove background from the image",
+            label="Xóa phông",
+            help="Xóa phông nền của ảnh",
             key="bg",
         ):
             image = remove(image)
 
         # ---------- MIRROR ----------
         if lcol.checkbox(
-            label="Mirror image? 🪞",
-            help="Select to mirror the image",
+            label="Sử dụng ảnh đối xứng",
+            help="Ảnh đối xứng",
             key="mirror",
         ):
             image = ImageOps.mirror(image)
@@ -117,17 +117,17 @@ if upload_img is not None:
         flag = True
 
         if lcol.checkbox(
-            "Convert to grayscale / black & white? 🔲",
+            "Chuyển đổi màu ảnh thành xám / trắng đen",
             key="gray_bw",
-            help="Select to convert image to grayscale or black and white",
+            help="Chuyển đổi màu ảnh thành xám / trắng đen",
         ):
             mode = "L"
             if (
                 lcol.radio(
-                    label="Grayscale or B&W",
-                    options=("Grayscale", "Black & White"),
+                    label="Xám or Trắng Đen",
+                    options=("Xám", "Trắng Đen"),
                 )
-                == "Grayscale"
+                == "Xám"
             ):
                 image = image.convert(mode)
             else:
