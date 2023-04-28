@@ -7,14 +7,8 @@ from streamlit_cropper import st_cropper
 VERSION = "0.6.1"
 
 st.set_page_config(
-    page_title="Image WorkDesk",
+    page_title="ĐỒ ÁN XỬ LÝ ẢNH",
     page_icon="🖼️",
-    menu_items={
-        "About": f"Image WorkDesk v{VERSION}  "
-        f"\nApp contact: [Siddhant Sadangi](mailto:siddhant.sadangi@gmail.com)",
-        "Report a Bug": "https://github.com/SiddhantSadangi/ImageWorkdesk/issues/new",
-        "Get help": None,
-    },
     layout="wide",
 )
 
@@ -26,7 +20,7 @@ with st.sidebar:
     st.components.v1.html(sidebar_html, height=750)
 
 # ---------- HEADER ----------
-st.title("🖼️ Welcome to Image WorkDesk!")
+st.title("🖼️ ĐỒ ÁN XỬ LÝ ẢNH")
 
 # ---------- FUNCTIONS ----------
 def _reset(key: str) -> None:
@@ -59,8 +53,8 @@ def _randomize() -> None:
 
 # ---------- OPERATIONS ----------
 option = st.radio(
-    label="Upload an image, or take one with your camera",
-    options=("Upload an image ⬆️", "Take a photo with my camera 📷"),
+    label="Upload an image",
+    options=("Upload an image ⬆️"),
     help="Uploaded images are deleted from the server when you\n* upload another image\n* clear the file uploader\n* close the browser tab",
 )
 
