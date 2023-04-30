@@ -20,7 +20,7 @@ with st.sidebar:
     st.components.v1.html(sidebar_html, height=750)
 
 # ---------- HEADER ----------
-st.title("🖼️ XỬ LÝ ẢNH")
+st.title("🖼️ IMAGE PROCESSING")
 
 # ---------- FUNCTIONS ----------
 def _reset(key: str) -> None:
